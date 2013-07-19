@@ -1,10 +1,14 @@
 modulo-controle-acesso
 ========================
-Author: Marco Reis
-Technologies: CDI, JSF, JPA, EJB, JPA, JAX-RS
+Autor: Marco Reis
+
+Tecnologias: CDI, JSF, JPA, EJB, JPA, JAX-RS, PRIMEFACES
+
 Summary: An example that incorporates multiple technologies
+
 Target Product: JBoss AS 
-Source: <https://github.com/jboss-jdf/jboss-as-quickstart/>
+
+Fonte: <https://github.com/masreis/modulo-controle-acesso>
 
 O que é isso?
 -----------
@@ -17,7 +21,6 @@ Cadastro
 
 
 Configuração do JBoss 7.1.1
-
 -------------------
 
 All you need is love
