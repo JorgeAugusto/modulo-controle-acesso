@@ -1,4 +1,4 @@
-modulo-controle-acesso: Assortment of technologies including Arquillian
+modulo-controle-acesso
 ========================
 Author: Marco Reis
 Technologies: CDI, JSF, JPA, EJB, JPA, JAX-RS
@@ -6,7 +6,7 @@ Summary: An example that incorporates multiple technologies
 Target Product: JBoss AS 
 Source: <https://github.com/jboss-jdf/jboss-as-quickstart/>
 
-What is it?
+O que é isso?
 -----------
 
 Cadastro
