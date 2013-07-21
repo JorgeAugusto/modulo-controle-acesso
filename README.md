@@ -26,21 +26,26 @@ Configuração do JBoss 7.1.1
 All you need is love
 
  
-Configure Maven
+Driver MySQL
 ---------------
 
 If you have not yet done so, you must [Configure Maven](../README.md#configure-maven) before testing the quickstarts.
 
 
-Start JBoss Enterprise Application Platform 6 or JBoss AS 7 with the Web Profile
+Datasource
 -------------------------
 
-1. Open a command line and navigate to the root of the JBoss server directory.
-2. The following shows the command line to start the server with the web profile:
-
-        For Linux:   JBOSS_HOME/bin/standalone.sh
-        For Windows: JBOSS_HOME\bin\standalone.bat
-
+		<datasource jndi-name="java:jboss/datasources/modulo-controle-acessoDS" enabled="true" use-java-context="true" pool-name="controle-acesso-pool">
+		    <connection-url>jdbc:mysql://localhost:3306/controle-acesso</connection-url>
+		    <driver>mysql</driver>
+		    <security>
+			<user-name>root</user-name>
+			<password></password>
+		    </security>
+		    <validation>
+			<check-valid-connection-sql>SELECT 1</check-valid-connection-sql>
+		    </validation>
+		</datasource>
  
 Build and Deploy the Quickstart
 -------------------------
