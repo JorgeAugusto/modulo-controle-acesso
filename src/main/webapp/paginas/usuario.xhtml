@@ -6,10 +6,30 @@
 	xmlns:p="http://primefaces.org/ui">
 
 <ui:composition template="templates/default.xhtml">
+
 	<ui:define name="content">
 
-		<h:outputText value="Nome" />
-		<p:inputText value="#{usuario.nome}" />
+		<h:form>
+			<p:panelGrid columns="2">
+				<f:facet name="header">Dados do usuário</f:facet>
+				<h:outputText value="Nome" />
+				<p:inputText value="#{usuario.nome}" />
+				<h:outputText value="E-mail" />
+				<p:inputText value="#{usuario.email}" />
+				<h:outputText value="Endereço" />
+				<p:inputText value="#{usuario.endereco}" />
+				<h:outputText value="Telefone" />
+				<p:inputText value="#{usuario.telefone}" />
+				<h:outputText value="Senha" />
+				<p:password value="#{usuario.senha}" />
+
+				<f:facet name="footer">
+					<p:commandButton type="button"
+						action="#{controladorUsuario.persistir}" value="Salvar"
+						icon="ui-icon-check" />
+				</f:facet>
+			</p:panelGrid>
+		</h:form>
 
 	</ui:define>
 </ui:composition>

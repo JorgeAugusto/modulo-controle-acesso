@@ -18,9 +18,6 @@ package net.marcoreis.seguranca.data;
 
 import java.util.List;
 
-import javax.enterprise.event.Observes;
-import javax.enterprise.event.Reception;
-
 import net.marcoreis.seguranca.model.Member;
 
 //@RequestScoped

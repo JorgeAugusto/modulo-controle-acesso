@@ -33,7 +33,7 @@ public class ControladorUsuario {
   }
 
   //FIXME Criar uma classe para adicinar mensagens no JSF
-  public void persistir(Usuario usuario) {
+  public void persistir() {
     try {
       usuarioRegistration.persistir(usuario);
       FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Gravação",
