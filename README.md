@@ -35,18 +35,32 @@ If you have not yet done so, you must [Configure Maven](../README.md#configure-m
 Datasource
 -------------------------
 
-		<datasource jndi-name="java:jboss/datasources/modulo-controle-acessoDS" enabled="true" use-java-context="true" pool-name="controle-acesso-pool">
-		    <connection-url>jdbc:mysql://localhost:3306/controle-acesso</connection-url>
-		    <driver>mysql</driver>
-		    <security>
-			<user-name>root</user-name>
-			<password></password>
-		    </security>
-		    <validation>
-			<check-valid-connection-sql>SELECT 1</check-valid-connection-sql>
-		    </validation>
-		</datasource>
- 
+ 			<datasources>
+                <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true">
+                    <connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1</connection-url>
+                    <driver>h2</driver>
+                    <security>
+                        <user-name>sa</user-name>
+                        <password>sa</password>
+                    </security>
+                </datasource>
+                <datasource jndi-name="java:jboss/datasources/modulo-controle-acessoDS" pool-name="controle-acesso-pool" enabled="true" use-java-context="true">
+                    <connection-url>jdbc:mysql://localhost:3306/controle-acesso</connection-url>
+                    <driver>mysql</driver>
+                    <security>
+                        <user-name>root</user-name>
+                    </security>
+                    <validation>
+                        <check-valid-connection-sql>SELECT 1</check-valid-connection-sql>
+                    </validation>
+                </datasource>
+                <drivers>
+                    <driver name="mysql" module="com.mysql"/>
+                    <driver name="h2" module="com.h2database.h2">
+                        <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
+                    </driver>
+                </drivers>
+            </datasources> 
 Build and Deploy the Quickstart
 -------------------------
 

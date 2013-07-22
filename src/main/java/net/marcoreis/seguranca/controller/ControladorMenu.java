@@ -1,35 +1,30 @@
 package net.marcoreis.seguranca.controller;
 
+import javax.annotation.PostConstruct;
+import javax.inject.Named;
+
+import org.primefaces.component.menuitem.MenuItem;
+import org.primefaces.component.submenu.Submenu;
 import org.primefaces.model.DefaultMenuModel;
 
+@Named
 public class ControladorMenu {
   private DefaultMenuModel model;
 
+  @PostConstruct
   public void init() {
     model = new DefaultMenuModel();
-    //First submenu
-    DefaultSubMenu firstSubmenu = new DefaultSubMenu("Dynamic Submenu");
-    DefaultMenuItem item = new DefaultMenuItem("External");
-    item.setUrl("http://www.primefaces.org");
-    item.setIcon("ui-icon-home");
-    firstSubmenu.addElement(item);
-    model.addElement(firstSubmenu);
-    //Second submenu
-    DefaultSubMenu secondSubmenu = new DefaultSubMenu("Dynamic Actions");
-    item = new DefaultMenuItem("Save");
-    item.setIcon("ui-icon-disk");
-    item.setCommand("#{menuBean.save}");
-    item.setUpdate("messages");
-    secondSubmenu.addElement(item);
-    item = new DefaultMenuItem("Delete");
-    item.setIcon("ui-icon-close");
-    item.setCommand("#{menuBean.delete}");
-    item.setAjax(false);
-    secondSubmenu.addElement(item);
-    item = new DefaultMenuItem("Redirect");
-    item.setIcon("ui-icon-search");
-    item.setCommand("#{menuBean.redirect}");
-    secondSubmenu.addElement(item);
-    model.addElement(secondSubmenu);
+    MenuItem menuCadastro = null;
+    model.addMenuItem(menuCadastro);
+    Submenu menuCadastroUsuario = null;
+    model.addSubmenu(menuCadastroUsuario);
+    MenuItem menuConsulta = null;
+    model.addMenuItem(menuConsulta);
+    Submenu menuRest = null;
+    model.addSubmenu(menuRest);
+  }
+
+  public DefaultMenuModel getModel() {
+    return model;
   }
 }
