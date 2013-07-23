@@ -35,8 +35,8 @@
 						alt="Editar" action="usuario">
 						<p:ajax update="tabelaUsuarios" />
 					</p:commandButton>
-					<p:commandButton update="tabelaUsuarios" icon="ui-icon-close"
-						onclick="return confirm('Deseja excluir o item?');" alt="Editar"
+					<p:commandButton update="tabelaUsuarios" icon="ui-icon-trash"
+						onclick="return confirm('Deseja excluir o item?');" alt="Excluir"
 						action="#{controladorUsuario.excluir(objeto)}" />
 				</p:column>
 
@@ -44,9 +44,13 @@
 
 			</p:dataTable>
 
+
+			<div>
+				<p:commandButton icon="ui-icon-document" alt="Novo" action="usuario" />
+			</div>
+
 			<br />
 			<hr style="width: 95%" />
-			<br />
 
 		</h:form>
 

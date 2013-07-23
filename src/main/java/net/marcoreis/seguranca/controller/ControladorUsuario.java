@@ -36,8 +36,8 @@ public class ControladorUsuario {
   public void persistir() {
     try {
       fachadaUsuario.persistir(usuario);
-      FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Gravação",
-          "Dados gravados com sucesso");
+      FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO,
+          "Dados gravados com sucesso", "Sucesso");
       facesContext.addMessage(null, m);
       initInstance();
     } catch (Exception e) {
