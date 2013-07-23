@@ -14,21 +14,29 @@
 
 <h:body>
 
-	<p:growl id="messages" />
+	<div id="topoDaAplicacao">
 
-	<div id="barraFerramentas">
-		<p:menu model="#{menuBean.model}" />
+		<div style="height: 40px;"></div>
+
+		<div id="barraFerramentas">
+			<p>[menu]</p>
+		</div>
+
+		<p:growl id="messages" />
+
+		<div id="content">
+			<div class="center">
+				<ui:insert name="content">Valor padrão</ui:insert>
+			</div>
+		</div>
+
+		<div id="footer">
+			<p>
+				[rodape]<br />
+			</p>
+		</div>
+
 	</div>
 
-	<div id="content">
-		<ui:insert name="content">
-                    [Template content will be inserted here]
-         </ui:insert>
-	</div>
-	<div id="footer">
-		<p>
-			[rodape]<br />
-		</p>
-	</div>
 </h:body>
 </html>

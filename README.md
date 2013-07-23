@@ -23,7 +23,7 @@ Cadastro
 Configuração do JBoss 7.1.1
 -------------------
 
-All you need is love
+O driver do MySQL está disponível em src/main/resources. Deve ser descompactado no diretório jboss7/modules/com.
 
  
 Driver MySQL
@@ -61,6 +61,8 @@ Datasource
                     </driver>
                 </drivers>
             </datasources> 
+            
+            
 Build and Deploy the Quickstart
 -------------------------
 

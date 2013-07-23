@@ -1,5 +1,6 @@
 package net.marcoreis.seguranca.service;
 
+import java.util.Collection;
 import java.util.logging.Logger;
 
 import javax.ejb.Stateless;
@@ -30,5 +31,14 @@ public class FachadaUsuario {
     Root<Usuario> usuario = criteria.from(Usuario.class);
     criteria.select(usuario).where(cb.equal(usuario.get("email"), email));
     return em.createQuery(criteria).getSingleResult();
+  }
+
+  public Collection<Usuario> findAll() {
+    return em.createQuery("from Usuario").getResultList();
+  }
+
+  public void excluir(Usuario u) {
+    u = em.merge(u);
+    em.remove(u);
   }
 }

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="templates/default.xhtml">
+
+	<ui:define name="content">
+
+		<h:form>
+			<h1>Módulo Controle de Acessos</h1>
+
+			<hr style="width: 95%" />
+			<br />
+
+			<p:dataTable id="tabelaUsuarios" var="objeto"
+				value="#{controladorUsuario.usuarios}">
+				<f:facet name="header">Usuários</f:facet>
+				<p:column headerText="Nome">
+					<h:outputText value="#{objeto.nome}" />
+				</p:column>
+
+				<p:column headerText="e-mail">
+					<h:outputText value="#{objeto.email}" />
+				</p:column>
+
+				<p:column headerText="Telefone">
+					<h:outputText value="#{objeto.telefone}" />
+				</p:column>
+
+				<p:column>
+					<p:commandButton update="tabelaUsuarios" icon="ui-icon-pencil"
+						alt="Editar" action="usuario">
+						<p:ajax update="tabelaUsuarios" />
+					</p:commandButton>
+					<p:commandButton update="tabelaUsuarios" icon="ui-icon-close"
+						onclick="return confirm('Deseja excluir o item?');" alt="Editar"
+						action="#{controladorUsuario.excluir(objeto)}" />
+				</p:column>
+
+				<f:facet name="footer">#{controladorUsuario.usuarios.size()} usuários</f:facet>
+
+			</p:dataTable>
+
+			<br />
+			<hr style="width: 95%" />
+			<br />
+
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+</html>

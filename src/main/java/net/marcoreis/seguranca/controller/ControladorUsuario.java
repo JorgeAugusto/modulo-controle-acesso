@@ -1,6 +1,5 @@
 package net.marcoreis.seguranca.controller;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.annotation.PostConstruct;
@@ -19,23 +18,24 @@ public class ControladorUsuario {
   @Inject
   private FacesContext facesContext;
   @Inject
-  private FachadaUsuario usuarioRegistration;
+  private FachadaUsuario fachadaUsuario;
   @Produces
   @Named
   private Usuario usuario;
-  @Named
-  private Collection<Usuario> usuarios;
 
   @PostConstruct
   public void initInstance() {
     usuario = new Usuario();
-    usuarios = new ArrayList<Usuario>();
+  }
+
+  public Collection<Usuario> getUsuarios() {
+    return fachadaUsuario.findAll();
   }
 
   //FIXME Criar uma classe para adicinar mensagens no JSF
   public void persistir() {
     try {
-      usuarioRegistration.persistir(usuario);
+      fachadaUsuario.persistir(usuario);
       FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_INFO, "Gravação",
           "Dados gravados com sucesso");
       facesContext.addMessage(null, m);
@@ -45,5 +45,9 @@ public class ControladorUsuario {
           e.getLocalizedMessage(), "Erro ao gravar");
       facesContext.addMessage(null, m);
     }
+  }
+
+  public void excluir(Usuario u) {
+    fachadaUsuario.excluir(u);
   }
 }
