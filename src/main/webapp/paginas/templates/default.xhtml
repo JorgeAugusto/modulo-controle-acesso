@@ -2,6 +2,7 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 
@@ -10,33 +11,37 @@
 	<title>Módulo Controle de Acesso</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<h:outputStylesheet name="css/screen.css" />
+
+	<script src="js/query-1.10.1.min.js" type="text/javascript" />
+
 </h:head>
 
 <h:body>
 
-	<div id="topoDaAplicacao">
+	<f:view>
+		<div id="topoDaAplicacao">
 
-		<div style="height: 40px;"></div>
+			<div style="height: 40px;"></div>
 
-		<div id="barraFerramentas">
-			<p>[menu]</p>
-		</div>
-
-		<p:growl id="messages" />
-
-		<div id="content">
-			<div class="center">
-				<ui:insert name="content">Valor padrão</ui:insert>
+			<div id="barraFerramentas">
+				<p>[menu]</p>
 			</div>
+
+			<p:growl id="messages" />
+
+			<div id="content">
+				<div class="center">
+					<ui:insert name="content">Valor padrão</ui:insert>
+				</div>
+			</div>
+
+			<div id="footer">
+				<p>
+					[rodape]<br />
+				</p>
+			</div>
+
 		</div>
-
-		<div id="footer">
-			<p>
-				[rodape]<br />
-			</p>
-		</div>
-
-	</div>
-
+	</f:view>
 </h:body>
 </html>

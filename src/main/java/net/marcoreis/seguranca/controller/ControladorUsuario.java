@@ -12,6 +12,7 @@ import javax.inject.Named;
 
 import net.marcoreis.seguranca.model.Usuario;
 import net.marcoreis.seguranca.service.FachadaUsuario;
+import net.marcoreis.seguranca.util.UtilExcecao;
 
 @Model
 public class ControladorUsuario {
@@ -42,7 +43,7 @@ public class ControladorUsuario {
       initInstance();
     } catch (Exception e) {
       FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_ERROR,
-          e.getLocalizedMessage(), "Erro ao gravar");
+          UtilExcecao.getRootErrorMessage(e), "Erro ao gravar");
       facesContext.addMessage(null, m);
     }
   }

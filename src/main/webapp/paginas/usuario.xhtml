@@ -9,6 +9,12 @@
 
 	<ui:define name="content">
 
+		<script type="text/javascript">
+                $(document).ready(function() {
+                    $(".telefone").mask("(99) 9999-9999");
+                });
+        </script>
+
 		<h:form>
 			<h1>Módulo Controle de Acessos</h1>
 
@@ -24,13 +30,13 @@
 				<h:outputText value="Endereço" />
 				<p:inputText value="#{usuario.endereco}" />
 				<h:outputText value="Telefone" />
-				<p:inputText value="#{usuario.telefone}" />
+				<p:inputText styleClass="telefone" value="#{usuario.telefone}" />
 				<h:outputText value="Senha" />
 				<p:password value="#{usuario.senha}" />
 
 				<f:facet name="footer">
 					<p:commandButton action="#{controladorUsuario.persistir}"
-						value="Salvar" icon="ui-icon-disk" />
+						ajax="false" value="Salvar" icon="ui-icon-disk" />
 				</f:facet>
 			</p:panelGrid>
 
