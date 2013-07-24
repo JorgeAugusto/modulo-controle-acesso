@@ -34,6 +34,7 @@ If you have not yet done so, you must [Configure Maven](../README.md#configure-m
 
 Datasource
 -------------------------
+Atualizar o arquivo jboss7/standalone/configuration/standalone.xml conforme abaixo:
 
  			<datasources>
                 <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true">
