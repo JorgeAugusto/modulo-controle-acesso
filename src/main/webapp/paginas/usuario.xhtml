@@ -23,6 +23,9 @@
 
 			<p:panelGrid columns="2">
 				<f:facet name="header">Dados do usuário</f:facet>
+				<h:outputText value="ID" rendered="#{not empty usuario.id}" />
+				<p:inputText value="#{usuario.id}" 
+					rendered="#{not empty usuario.id}" />
 				<h:outputText value="Nome" />
 				<p:inputText value="#{usuario.nome}" />
 				<h:outputText value="E-mail" />

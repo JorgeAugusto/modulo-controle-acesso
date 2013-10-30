@@ -51,4 +51,9 @@ public class ControladorUsuario {
   public void excluir(Usuario u) {
     fachadaUsuario.excluir(u);
   }
+
+  public String editar(Usuario u){
+    usuario = fachadaUsuario.findById(u.getId());
+    return "usuario";
+  }
 }

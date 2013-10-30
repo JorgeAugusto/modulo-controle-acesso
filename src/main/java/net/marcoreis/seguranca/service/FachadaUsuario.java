@@ -22,7 +22,7 @@ public class FachadaUsuario {
 
   public void persistir(Usuario usuario) {
     em.persist(usuario);
-    log.info("Persist: " + usuario.getId());
+    log.info("Persistir: " + usuario.getId());
   }
 
   public Usuario findByEmail(String email) {
@@ -40,5 +40,9 @@ public class FachadaUsuario {
   public void excluir(Usuario u) {
     u = em.merge(u);
     em.remove(u);
+  }
+
+  public Usuario findById(Long id) {
+    return em.find(Usuario.class, id);
   }
 }

@@ -32,25 +32,23 @@
 
 				<p:column>
 					<p:commandButton update="tabelaUsuarios" icon="ui-icon-pencil"
-						alt="Editar" action="usuario">
-						<p:ajax update="tabelaUsuarios" />
+						ajax="false" alt="Editar"
+						action="#{controladorUsuario.editar(objeto)}">
 					</p:commandButton>
 					<p:commandButton update="tabelaUsuarios" icon="ui-icon-trash"
 						onclick="return confirm('Deseja excluir o item?');" alt="Excluir"
 						action="#{controladorUsuario.excluir(objeto)}" />
 				</p:column>
 
-				<f:facet name="footer">#{controladorUsuario.usuarios.size()} usuários</f:facet>
+				<f:facet name="footer">#{controladorUsuario.usuarios.size()} usuários cadastrados</f:facet>
 
 			</p:dataTable>
-
+			<br />
 
 			<div>
 				<p:commandButton icon="ui-icon-document" alt="Novo" action="usuario" />
 			</div>
 
-			<br />
-			<hr style="width: 95%" />
 
 		</h:form>
 

@@ -5,12 +5,12 @@
 
 	<groupId>net.marcoreis</groupId>
 	<artifactId>modulo-controle-acesso</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.beta</version>
 	<packaging>war</packaging>
 	<name>modulo-controle-acesso</name>
-	<description>A starter Java EE 6 webapp project for use on JBoss AS 7 / EAP 6, generated from the jboss-javaee6-webapp archetype</description>
+	<description>Uma aplicação básica para mostrar as funcionalidades do Java EE 6 rodando no JBoss AS 7.1</description>
 
-	<url>http://jboss.org/jbossas</url>
+	<url>http://github.com/masreis</url>
 	<licenses>
 		<license>
 			<name>Apache License, Version 2.0</name>
